@@ -1,0 +1,53 @@
+{
+    "January": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    },
+    "February": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    },
+    "March": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    },
+    "April": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    },
+    "May": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    },
+    "June": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    },
+    "July": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    },
+    "August": {
+        "Rainy": "rainy",
+        "Sunny": "sunny",
+        "Hazy": "haze"
+    },
+    "September": {
+        "Rainy": "rainy",
+        "Sunny": "sunny",
+        "Hazy": "haze"
+    },
+    "October": {
+        "Rainy": "rainy",
+        "Sunny": "sunny",
+        "Hazy": "haze"
+    },
+    "November": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    },
+    "December": {
+        "Rainy": "rainy",
+        "Sunny": "sunny"
+    }
+}
