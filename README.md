@@ -249,8 +249,6 @@ This repository uses redux for its centralised state of the inputs. It occupies 
 ### Structure
 
 When the fields are created based on the the edits to ```outline.json``` the inputs entered are stored as follows:
-
-When the fields are created based on the the edits to ```outline.json``` the inputs entered are stored as follows:
 ```
 // Global State > Input >
 {
