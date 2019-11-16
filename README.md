@@ -1,36 +1,32 @@
 # Simple React/Redux/Bootstrap JSON Schema Form Builder Boilerplate
 
-A simple React based boilerplate using Redux for state management of the forms' data, JSON schema for creation of forms and Bootstrap for appearance. Allows for dynamic fields that depend on input of other field
+A simple React based boilerplate using Redux for state management of the forms' data, JSON schema for creation of forms and Bootstrap for appearance. Allows for dynamic fields that depend on input of other fields
 
 # Content
 
-1. Installation
-2. Usage
-3. Schema Structure
+1. Getting Started
+2. Schema Structure
     1. Form
     2. Fields
     3. Output
     4. Parsed JSON
-4. Inputs
+3. Inputs
     1. Common properties
     2. Default values
     3. Types
-6. State Management
+4. State Management
     1. Structure
-7. Limitations
+5. Limitations
 
 
-## Installation
+## Getting Started
 
-1. With node and npm installed, go to command line (at this root directory) and type ``` npm i && npm start ``` 
+With node and npm installed, head on to the command line (at this root directory) and type ``` npm i && npm start ``` 
+Read on further to understand how the form is populated
 
-## Usage
-1. Edit ``` src/schema/outline.json```
-2. Run ``` npm start ``` after editing
-3. Forms will be populated
+## Schema Structure
 
-### Schema Structure
-
+The main schema file is located at ``` src/schema/outline.json```.
 In general this is how the schema looks like:
 ```
 {

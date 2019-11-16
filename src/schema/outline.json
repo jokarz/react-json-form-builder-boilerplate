@@ -1,6 +1,6 @@
 {
-    "testing":{
-        "displayName": "Testing",
+    "example1":{
+        "displayName": "Example 1",
         "fields":{
             "basicInput": {
                 "displayName": "Basic Input",
@@ -20,13 +20,17 @@
                 "data": "month.json",
                 "width": 6
             }
+        },
+        "output":{
+            "encode": false,
+            "format": "You typed [basicInput] and picked [basicDropdown]"
         }
     },
-    "test": {
-        "displayName": "Google Ads",
+    "example2": {
+        "displayName": "Example 2",
         "fields": {
             "basicInput": {
-                "displayName": "Basic Input",
+                "displayName": "Enter any month (e.g January, February)",
                 "dependent": null,
                 "placeholder": "Basic Input",
                 "type": "manual",
@@ -44,156 +48,27 @@
                 "width": 6
             },
             "advanceCase": {
-                "displayName": "Case",
+                "displayName": "Enter \"magic\" into the first field to activate this field",
                 "width": 6,
                 "dependent": "basicInput",
                 "type": "case",
                 "case":{
-                    "lol": {
+                    "magic": {
                         "displayName": "Month",
                         "width": 3,
                         "dependent": null,
                         "type": "dropdown",
-                        "data": "month.json"
+                        "data": "magic.json"
                     }
                 }
 
             },
             "advanceLookup":{
-                "displayName": "Weather",
+                "displayName": "Weather (available when any month is entered on the first input)",
                 "dependent": "basicInput",
                 "width": 6,
                 "type": "lookup",
                 "data": "season.json"
-            }
-        }
-    },
-    "test2": {
-        "displayName": "Sizmek",
-        "fields": {
-            "campaignType": {
-                "displayName": "Campaign Type",
-                "dependent": null,
-                "type": "dropdown",
-                "data": "campaigntype.json",
-                "placeholder": "Select Campaign Type",
-                "width": 6
-            },
-            "something": {
-                "displayName": "Something",
-                "width": 6,
-                "dependent": null,
-                "type": "dropdown",
-                "data": "month.json"
-            },
-            "month": {
-                "displayName": "Month",
-                "width": 3,
-                "dependent": null,
-                "type": "dropdown",
-                "data": "month.json"
-            },
-            "lol": {
-                "displayName": "Testing",
-                "width": 3,
-                "dependent": null,
-                "type": "dropdown",
-                "data": "month.json"
-            },
-            "year": {
-                "displayName": "Year",
-                "width": 3,
-                "dependent": null,
-                "type": "dropdown",
-                "data": "year.json"
-            },
-            "campaignName": {
-                "displayName": "Campaign Name",
-                "dependent": "campaignType",
-                "show": false,
-                "type": "case",
-                "width": 4,
-                "case": {
-                    "Local": {
-                        "placeholder": "Enter Local Campaign",
-                        "type": "manual",
-                        "regex": "[A-Z]*",
-                        "prefix": "L_",
-                        "suffix": "LOL"
-                    },
-                    "Global": {
-                        "placeholder": "Enter Global Campaign",
-                        "type": "dropdown",
-                        "data": "campaigns.json"
-                    }
-                }
-            }
-        },
-        "output": {
-            "dependent": "campaignType",
-            "case": {
-                "Local": {
-                    "encode": false,
-                    "format": "L_[campaignType]-[month][year]--[campaignName]"
-                },
-                "Global": {
-                    "encode": true,
-                    "format": "[campaignType]-[month]-[year]-campaign is [campaignName]"
-                }
-            }
-        }
-    },
-    "ttd": {
-        "displayName": "The Trade Desk",
-        "fields": {
-            "campaignType": {
-                "displayName": "Campaign Type",
-                "dependent": null,
-                "type": "dropdown",
-                "data": "campaigntype.json",
-                "placeholder": "Select Campaign Type",
-                "width": 6
-            },
-            "year": {
-                "displayName": "Year",
-                "width": 3,
-                "dependent": null,
-                "type": "dropdown",
-                "data": "year.json"
-            },
-            "campaignName": {
-                "displayName": "Campaign Name",
-                "dependent": "campaignType",
-                "show": false,
-                "type": "case",
-                "width": 4,
-                "case": {
-                    "Local": {
-                        "placeholder": "Enter Local Campaign",
-                        "type": "manual",
-                        "regex": ".*",
-                        "prefix": "L_",
-                        "suffix": "LOL"
-                    },
-                    "Global": {
-                        "placeholder": "Enter Global Campaign",
-                        "type": "dropdown",
-                        "data": "campaigns.json"
-                    }
-                }
-            }
-        },
-        "output": {
-            "dependent": "campaignType",
-            "case": {
-                "Local": {
-                    "encode": false,
-                    "format": "L_[campaignType]-[month][year]--[campaignName]"
-                },
-                "Global": {
-                    "encode": true,
-                    "format": "[campaignType]-[month]-[year]-campaign is [campaignName]"
-                }
             }
         }
     }

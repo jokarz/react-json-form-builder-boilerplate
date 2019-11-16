@@ -1,8 +1,10 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState, useEffect, Fragment, useRef } from 'react'
 import { connect } from 'react-redux'
 
 const Output = props => {
+    const copyInput = useRef()
     const [show, setShow] = useState(false)
+    const [copyBtnText, setCopyBtnText] = useState('Copy Output')
     const { platform, data, Inputs } = props
     const { dependent } = data
     let result = ''
@@ -20,6 +22,23 @@ const Output = props => {
         }
 
     }
+
+    const handleCopy = () => {
+        copyInput.current.select()
+        window.document.execCommand('copy')
+        window.getSelection().removeAllRanges()
+        copyInput.current.blur()
+        setCopyBtnText('Copied')
+    }
+
+    useEffect(() => {
+        if (copyBtnText !== 'Copy') {
+            setTimeout(() => {
+                setCopyBtnText('Copy')
+            }, 1000)
+        }
+    }, [copyBtnText])
+
     if (result) {
         let temp = result.match(/\[(.*?)\]/g).map(item => item.substring(1, item.length - 1))
         for (let i = 0; i < temp.length; i++) {
@@ -50,7 +69,8 @@ const Output = props => {
                 show ?
                     <div className="col-12">
                         <p className="mb-1"><sub>Output</sub></p>
-                        <textarea className="form-control" value={result} readOnly />
+                        <textarea className="form-control" value={result} readOnly ref={copyInput}/>
+                        <button className="mt-3 btn btn-primary" onClick={handleCopy} disabled={copyBtnText === 'Copied'}>{copyBtnText}</button>
                     </div>
                     : null
 
