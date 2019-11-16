@@ -10,6 +10,7 @@ const parseJSON = filePath => {
     }
 }
 
+// change the path below if the schema file needs to be relocated elsewhere
 let schema = parseJSON('./src/schema/outline.json');
 
 Object.keys(schema).map(platform => {
@@ -39,3 +40,4 @@ Object.keys(schema).map(platform => {
 })
 
 fs.writeFileSync('./src/data/processed/overall.json', JSON.stringify(schema, null, 2), 'utf8', err => { });
+
