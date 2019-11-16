@@ -3,6 +3,7 @@ import overallData from './data/processed/overall.json'
 import Platform from './components/platform/Platform'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import './schema/outline.json'
 
 class App extends Component {
   render(){

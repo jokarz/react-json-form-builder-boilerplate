@@ -39,4 +39,3 @@ Object.keys(schema).map(platform => {
 })
 
 fs.writeFileSync('./src/data/processed/overall.json', JSON.stringify(schema, null, 2), 'utf8', err => { });
-
