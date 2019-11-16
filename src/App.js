@@ -4,6 +4,7 @@ import Platform from './components/platform/Platform'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
 
+
 class App extends Component {
   render(){
     let platforms = Object.keys(overallData)
@@ -22,6 +23,7 @@ class App extends Component {
         <div className="row">
           <div className="col">
             {
+              //different forms are hidden via css, routing is also done by matching the key name of the form object
               platforms.map(key => (
                 <Platform data={overallData[key]} key={key} name={key} show={this.props.location.pathname === `/${key}`} />
               ))
