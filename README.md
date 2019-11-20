@@ -28,7 +28,7 @@ Read on further to understand how the form is populated
 
 The main schema file is located at ``` src/schema/outline.json```.
 In general this is how the schema looks like:
-```
+```js
 {
     form:{
         displayname: "First Form"
@@ -84,18 +84,18 @@ displayName, width, type, dependent, placeholder
 ### Default values
 
 By default the field values are as such
-```
-        displayName: 'Default',
-        width: 12,
-        placeholder: '...',
-        dependent: null,
-        show: true,
-        type: 'manual',
-        case: {},
-        data: {},
-        prefix: '',
-        suffix: '',
-        regex: '.*'
+```js
+"displayName": "Default",
+"width": 12,
+"placeholder": "...",
+"dependent": null,
+"show": true,
+"type": "manual",
+"case": {},
+"data": {},
+"prefix": "",
+"suffix": "",
+"regex": ".*"
 ```
 
 ### Types
@@ -110,7 +110,7 @@ Currently there are only 4 input types:
 #### Manual Input
 
 Manual input is a basic input that allows for prefix and suffix. Regex can also be added for input matching. Example 
-```
+```js
 "displayName": "Basic Input",
 "dependent": null,
 "placeholder": "Basic Input",
@@ -125,7 +125,7 @@ Manual input is a basic input that allows for prefix and suffix. Regex can also 
 #### Dropdown Input
 
 Dropdown input is a basic input that allows for dropdown with autocomplete functionality 
-```
+```js
 "displayName": "Basic Dropdown",
 "dependent": null,
 "placeholder": "Basic Dropdown",
@@ -134,7 +134,7 @@ Dropdown input is a basic input that allows for dropdown with autocomplete funct
 "width": 6
 ```
 The ```month.json``` referenced resides in ```src/data``` and the format for the json should be in simple object key, value pairing.
-```
+```js
 {
     "January": "Jan",
     "February": "Feb",
@@ -154,7 +154,7 @@ The ```month.json``` referenced resides in ```src/data``` and the format for the
 #### Case Input
 
 Case input is an advance input that is dependent on the input value referenced. Think of it as the cases in a switch statement.
-```
+```js
 "displayName": "Advance Case Dropdown",
 "dependent": "basicDropdown",
 "show": false,
@@ -176,7 +176,7 @@ Case input is an advance input that is dependent on the input value referenced. 
 }
 ```
 The dependent key is referenced on the target field key while case key is referencing the key of the input. The case input is also able to reference on manual input as well.
-```
+```js
 "displayName": "Advance Case Manual Input",
 "width": 6,
 "dependent": "basicInput",
@@ -202,7 +202,7 @@ Do note that it supports only manual, dropdown and lookup as inputs within case.
 #### Lookup Input
 
 Lookup input is an advance version of a dropdown that also dependent on the input value referenced. It is similar to case input where you can specify the data based on the dependent input. However, you can also specify what the dropdown content is going to be using a nested JSON object.
-```
+```js
 "displayName": "Weather",
 "dependent": "basicInput",
 "width": 6,
@@ -215,7 +215,7 @@ The lookup input will be usable once the manual input matches the **key** of the
 ##### Linking up with a dropdown input
 
 To link up the input data with the lookup input, the **key** of JSON data on the dropdown input needs to be specified on the JSON data of the lookup input
-```
+```js
 // dropdown input JSON data
 {
     "January": "Jan",
@@ -226,7 +226,7 @@ To link up the input data with the lookup input, the **key** of JSON data on the
     ...
 }
 ```
-```
+```js
 // lookup input JSON data
 {
     "January": {
@@ -249,7 +249,7 @@ This repository uses redux for its centralised state of the inputs. It occupies 
 ### Structure
 
 When the fields are created based on the the edits to ```outline.json``` the inputs entered are stored as follows:
-```
+```js
 // Global State > Input >
 {
     "Some Platform":
