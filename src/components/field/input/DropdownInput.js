@@ -9,6 +9,7 @@ const DropdownInput = props => {
     }
     return (
         <Typeahead
+            className="mb-3"
             placeholder={placeholder}
             multiple={false}
             paginationText={'More results...'}
